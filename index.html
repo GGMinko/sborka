@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Путешествуй по России</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/constructor.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/banner.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=fc2ca79a-00cb-4d95-bceb-19568901bfe2&lang=ru_RU" type="text/javascript"></script>
+  <script src="js/header.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">Инвернтарь на пляж</div>
+        <div class="header__nav">
+          <button class="header__nav-toggle">Меню</button>
+          <ul class="header__nav-list">
+            <li><a href="#banner">Готовый маршрут</a></li>
+            <li><a href="#constructor">Конструктор</a></li>
+            <li><a href="#feedback">Есть вопросы?</a></li>
+            <li><a href="#payment">Забронировать услуги</a></li>
+          </ul>
+        </div>
+      </header>
+      <section class="banner">
+        <div class="banner__content">
+          <h1 class="banner__title">Конструктор маршрута для доставки инвентаря между обслуживаемыми пляжами Москвы и МО</h1>
+          <p class="banner__description"></p>
+          <a href="#constructor" class="banner__button">Старт</a>
+        </div>
+        <div class="banner__image">
+          <!-- Здесь будет размещено изображение баннера -->
+        </div>
+      </section>
+      <section class="constructor">
+        <h2 class="constructor__title">Выбрать пляж</h2>
+        <form class="constructor__form">
+          <div class="constructor__region">
+            <label for="region">Выберите локацию:</label>
+            <div class="constructor__region-wrapper">
+              <ul class="constructor__region-list"></ul>
+            </div>
+          </div>
+          <div class="constructor__city">
+            <label for="city">Выберите администратиный округ:</label>
+            <div class="constructor__city-wrapper">
+              <ul class="constructor__city-list"></ul>
+            </div>
+          </div>
+          <div class="constructor__attractions">
+            <label for="attractions">Выберите название пляжа:</label>
+            <div class="constructor__attractions-wrapper">
+              <ul class="constructor__attractions-list"></ul>
+            </div>
+          </div>
+          <div class="constructor__transport">
+            <label for="transport">Выберите транспорт:</label>
+            <div class="constructor__transport-wrapper">
+              <input type="radio" id="transport-car" name="transport" value="car">
+              <label for="transport-car">Автомобиль</label>
+              <input type="radio" id="transport-car" name="transport" value="fly">
+              <label for="transport-car">Самокат\вело</label>
+              <input type="radio" id="transport-car" name="transport" value="jd">
+              <label for="transport-car">Пешеход</label>
+              <!--<input type="radio" id="transport-other" name="transport" value="other">-->
+              <!--//<label for="transport-other">Другое</label>-->
+            </div>
+            <select id="transport-other-select" name="transport-other">
+              <!-- Варианты другого транспорта -->
+            </select>
+          </div>
+          <button type="submit" class="constructor__submit">Сформировать маршрут движения</button>
+        </form>
+        <div class="constructor__result">
+          <h3>Ваш маршрут:</h3>
+          <div class="constructor__result-regions"></div>
+          <div class="constructor__result-cities"></div>
+          <div class="constructor__result-attractions"></div>
+          <div class="constructor__result-transport"></div>
+          <div class="constructor__result-map"></div>
+        </div>
+      </section>
+      <section class="feedback">
+        <h2 class="feedback__title">Связаться с центральным складом</h2>
+        <form class="feedback__form">
+          <input type="text" name="name" placeholder="Имя" required>
+          <input type="number" name="id" placeholder="ID курьера" required>
+          <textarea name="message" placeholder="Сообщение" required></textarea>
+          <button type="submit" class="feedback__submit">Отправить</button>
+        </form>
+      </section>
+      <section class="payment">
+        <h2 class="payment__title">Записаться на выдачу заказа в ЦС</h2>
+        <form class="payment__form">
+          <input type="text" name="name" placeholder="Имя" required>
+          <input type="time" name="time" placeholder="Время прибытия" required>
+          <input type="number" name="id" placeholder="ID" required>
+          <input type="tel" name="phone" placeholder="Телефон" required>
+          <button type="submit" class="payment__submit">Резерв</button>
+        </form>
+      </section>
+      <footer class="footer">
+        <div class="footer__info">
+          <p>Компания "Инвентарь на пляж"</p>
+          <p>Адрес: г. Москва, ул. Красина д10</p>
+          <p>Телефон: +7 (999) 777-77-77</p>
+          <p>Email: INbeach@moscow.ru</p>
+          <p>Разработчик: ИТ_ХАБ</p>
+        </div>
+      </footer>
+  <script src="js/constructor.js"></script>
+</body>
+</html>
